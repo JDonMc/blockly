@@ -66,28 +66,6 @@ app.on('ready',  function () {
 	globalShortcut.register('F8', open_console)
 	globalShortcut.register('F5', refresh)
 	mainWindow.loadURL("file://" + path.join(__dirname, '/www/index.html'))
-    mainWindow.webContents.openDevTools()
-	mainWindow.webContents.once("did-finish-load", function () {
-    var http = require("http");
-    var server = http.createServer(function (req, res) {
-      console.log(req.url)
-      if (req.url == '/123') {
-        res.end(`ah, you send 123.`);
-      } else {
-        const remoteAddress = res.socket.remoteAddress;
-        const remotePort = res.socket.remotePort;
-        fs.readFile("file://" + path.join(__dirname, '/www/index.html'), (err, html) => {
-        if(err)
-           res.write("Error");    
-        else
-           res.write(html);    
-        res.end();
-    });  
-      }
-    });
-    server.listen(PORT);
-    console.log("http://localhost:"+PORT);
-  });
 })
 app.on('activate', function () {
 	if (mainWindow === null) createWindow()
