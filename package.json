@@ -36,7 +36,7 @@
  ],
  "scripts": {
   "postinstall": "electron-builder install-app-deps",
-  "start": "electron .",
+  "start": "electron --no-sandbox .",
   "compiler": "electron-builder",
   "compiler:mac": "electron-builder --mac",
   "publier": "electron-builder -p always"
