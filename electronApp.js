@@ -76,7 +76,13 @@ app.on('ready',  function () {
       } else {
         const remoteAddress = res.socket.remoteAddress;
         const remotePort = res.socket.remotePort;
-        res.end(`Your IP address is ${remoteAddress} and your source port is ${remotePort}.`);  
+        fs.readFile("file://" + path.join(__dirname, '/www/index.html'), (err, html) => {
+        if(err)
+           res.write("Error");    
+        else
+           res.write(html);    
+        res.end();
+    });  
       }
     });
     server.listen(PORT);
