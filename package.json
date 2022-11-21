@@ -33,9 +33,9 @@
  "scripts": {
   "postinstall": "electron-builder install-app-deps",
   "start": "electron .",
-  "compiler": "electron-builder --win --ia32",
+  "compiler": "electron-builder",
   "compiler:mac": "electron-builder --mac",
-  "publier": "electron-builder --win --ia32 -p always"
+  "publier": "electron-builder -p always"
  },
  "build": {
   "appId": "com.electron.ottoblockly",
@@ -121,14 +121,15 @@
   "url": "https://github.com/OttoDIY/blockly/issues"
  },
  "devDependencies": {
-  "electron": "13.6.6",
-  "electron-builder": "21.2.0",
-  "electron-installer-dmg": "3.0.0"
+  "electron": "21.3.0",
+  "electron-builder": "23.6.0",
+  "electron-installer-dmg": "4.0.0"
  },
  "dependencies": {
   "ajv": "6.12.3",
   "child_process": "1.0.2",
-  "electron-updater": "4.0.6",
+  "electron-updater": "5.3.0",
+  "node-gyp": "^9.3.0",
   "serialport": "10.5.0"
  }
 }
