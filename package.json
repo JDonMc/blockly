@@ -1,8 +1,8 @@
 {
- "name": "ottoblockly",
- "version": "1.4.7",
- "description": "Blockly and Arduino coding standalone App for Otto DIY robot",
- "author": "Otto DIY and Builder community",
+ "name": "Blockduino",
+ "version": "0.0.1",
+ "description": "Blockduino coding standalone App for Aebo DIY robot",
+ "author": "Aebo DIY and Builder community",
  "license": "GPL-2.0",
  "main": "electronApp.js",
  "keywords": [
@@ -115,10 +115,11 @@
  },
  "repository": {
   "type": "git",
-  "url": "https://github.com/OttoDIY/blockly"
+  "url": "https://github.com/JDonMc/blockly"
  },
  "bugs": {
-  "url": "https://github.com/OttoDIY/blockly/issues"
+  "url": "https://github.com/JDonMc/blockly/issues",
+  "email": "adenh@utas.edu.au"
  },
  "devDependencies": {
   "electron": "21.3.0",
