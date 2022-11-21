@@ -65,7 +65,6 @@ app.on('ready',  function () {
 	createWindow()
 	globalShortcut.register('F8', open_console)
 	globalShortcut.register('F5', refresh)
-	mainWindow.loadURL("file://" + path.join(__dirname, '/www/index.html'))
 })
 app.on('activate', function () {
 	if (mainWindow === null) createWindow()
