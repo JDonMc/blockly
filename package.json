@@ -129,6 +129,6 @@
   "ajv": "6.12.3",
   "child_process": "1.0.2",
   "electron-updater": "4.0.6",
-  "serialport": "7.1.4"
+  "serialport": "10.5.0"
  }
 }
