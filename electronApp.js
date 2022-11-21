@@ -7,6 +7,7 @@ var factoryWindow
 var promptWindow
 var promptOptions
 var promptAnswer
+const PORT = 8080
 autoUpdater.autoDownload = false
 autoUpdater.logger = null
 function createWindow () {
@@ -64,6 +65,23 @@ app.on('ready',  function () {
 	createWindow()
 	globalShortcut.register('F8', open_console)
 	globalShortcut.register('F5', refresh)
+	mainWindow.loadURL("file://" + path.join(__dirname, '/www/index.html'))
+    mainWindow.webContents.openDevTools()
+	mainWindow.webContents.once("did-finish-load", function () {
+    var http = require("http");
+    var server = http.createServer(function (req, res) {
+      console.log(req.url)
+      if (req.url == '/123') {
+        res.end(`ah, you send 123.`);
+      } else {
+        const remoteAddress = res.socket.remoteAddress;
+        const remotePort = res.socket.remotePort;
+        res.end(`Your IP address is ${remoteAddress} and your source port is ${remotePort}.`);  
+      }
+    });
+    server.listen(PORT);
+    console.log("http://localhost:"+PORT);
+  });
 })
 app.on('activate', function () {
 	if (mainWindow === null) createWindow()
