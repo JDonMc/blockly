@@ -2,7 +2,11 @@
  "name": "Blockduino",
  "version": "0.0.1",
  "description": "Blockduino coding standalone App for Aebo DIY robot",
- "author": "Aebo DIY and Builder community",
+ "author": {
+  "name" : "Jack McLovin",
+  "email" : "adenh@utas.edu.au",
+  "url" : "https://jackdonmclovin.com/"
+ },
  "license": "GPL-2.0",
  "main": "electronApp.js",
  "keywords": [
